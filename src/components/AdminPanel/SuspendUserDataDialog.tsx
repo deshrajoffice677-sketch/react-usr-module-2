@@ -138,11 +138,11 @@ export default function BanedSuspendUserDataDialog({
                     <span className="font-semibold text-gray-900">{u.name || u.user?.name}</span>
                   </td>
 
-                  <td className="py-4 px-4">{u.reason}</td>
+                  <td className="py-4 px-4 font-semibold text-gray-900">{u.reason}</td>
 
-                  <td className="py-4 px-4 text-gray-500">{u.date}</td>
+                  <td className="py-4 px-4 font-semibold text-gray-900">{u.date}</td>
 
-                  <td className="py-4 px-4 text-gray-500">{u.duration} Days</td>
+                  <td className="py-4 px-4 font-semibold text-gray-900">{u.duration} Days</td>
 
                   <td className="py-4 px-4 text-right">
                     <Button

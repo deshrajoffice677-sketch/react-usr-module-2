@@ -125,12 +125,12 @@ export default function BanedDataDialog({
 
                   <td className="py-4 px-4 flex items-center gap-3">
                     <img src={u.avatar || u.user?.avatar} className="w-8 h-8 rounded-full" alt="" />
-                    <span className="font-medium">{u.name || u.user?.name}</span>
+                    <span className="font-semibold text-gray-900">{u.name || u.user?.name}</span>
                   </td>
 
-                  <td className="py-4 px-4">{u.reason}</td>
+                  <td className="py-4 px-4 font-semibold text-gray-900">{u.reason}</td>
 
-                  <td className="py-4 px-4">{u.date}</td>
+                  <td className="py-4 px-4 font-semibold text-gray-900">{u.date}</td>
 
                   <td className="py-4 px-4 text-right">
                     <Button

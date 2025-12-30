@@ -247,7 +247,7 @@ const UsersPage = () => {
                         className="hover:bg-gray-50/50 cursor-pointer transition-colors"
                         onClick={() => navigate(`detail/${u.id}`)}
                       >
-                        <td className="py-4 px-4 text-gray-500">{index + 1}</td>
+                        <td className="py-4 px-4 font-medium text-gray-900">{index + 1}</td>
 
                         <td className="py-4 px-4">
                           <div className="flex items-center gap-3">
@@ -263,7 +263,7 @@ const UsersPage = () => {
                           </div>
                         </td>
 
-                        <td className="py-4 px-4 text-gray-500">{u.email}</td>
+                        <td className="py-4 px-4 font-medium text-gray-900">{u.email}</td>
 
                         <td className="py-4 px-4 font-medium">{u.role}</td>
                         <td className="py-4 px-4">
@@ -284,8 +284,12 @@ const UsersPage = () => {
                         </td>
 
                         <td className="py-4 px-4 font-medium text-gray-900">{u.subscription}</td>
-                        <td className="py-4 px-4 text-gray-500">{formatDate(u.joinedDate)}</td>
-                        <td className="py-4 px-4 text-gray-500">{timeAgo(u.lastActive)}</td>
+                        <td className="py-4 px-4 font-medium text-gray-900">
+                          {formatDate(u.joinedDate)}
+                        </td>
+                        <td className="py-4 px-4 font-medium text-gray-900">
+                          {timeAgo(u.lastActive)}
+                        </td>
 
                         <td
                           className="py-4 px-4 text-right"

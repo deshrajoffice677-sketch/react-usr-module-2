@@ -121,7 +121,7 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
                     </div>
                   </td>
 
-                  <td className="py-4 px-4">{row.action}</td>
+                  <td className="py-4 px-4 font-medium text-gray-900">{row.action}</td>
 
                   <td className="py-4 px-4">
                     <div className="flex items-center gap-3">
@@ -135,9 +135,9 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
                     </div>
                   </td>
 
-                  <td className="py-4 px-4">{row.reason || '-'}</td>
+                  <td className="py-4 px-4 font-medium text-gray-900">{row.reason || '-'}</td>
 
-                  <td className="py-4 px-4 text-gray-500">{row.date}</td>
+                  <td className="py-4 px-4 font-medium text-gray-900">{row.date}</td>
                 </tr>
               ))}
             </tbody>
