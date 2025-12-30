@@ -78,7 +78,7 @@ export default function BanedSuspendUserDataDialog({
         <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
 
         <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
-          <div className="relative w-full md:w-64">
+          <div className="relative w-full md:w-90">
             <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
             <Input
               placeholder="Search"
