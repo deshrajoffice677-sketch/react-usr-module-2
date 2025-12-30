@@ -90,7 +90,7 @@ const UserDetailPage = () => {
 
   return (
     <>
-      <div className="w-full bg-[#F8F9FC] p-6">
+      <div className="w-full bg-white p-6">
         <div className="flex items-center  mb-6">
           <button
             onClick={() => navigate(-1)}
