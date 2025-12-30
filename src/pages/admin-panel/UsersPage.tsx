@@ -213,7 +213,7 @@ const UsersPage = () => {
 
             <div className="border border-gray-100 rounded-xl overflow-hidden shadow-sm">
               <table className="w-full text-sm text-gray-600">
-                <thead className="bg-[#F9FAFB]">
+                <thead className="">
                   <tr>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900 w-12">#</th>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Name</th>
