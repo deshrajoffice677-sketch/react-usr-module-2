@@ -39,7 +39,7 @@ const NavItem = ({ icon, text, isActive, sidebarOpen, onClick }: NavItemProps) =
 const MainLayout = ({
   children,
   showSearch = true,
-  searchPlaceholder = 'Search for courses...',
+  searchPlaceholder = 'Search',
 }: MainLayoutProps) => {
   const [sidebarOpen] = useState(true);
   const navigate = useNavigate();
