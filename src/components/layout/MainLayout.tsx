@@ -54,9 +54,9 @@ const MainLayout = ({
       <div
         className={`${sidebarOpen ? 'w-25' : 'w-20'} bg-white shadow-lg transition-all duration-300 flex flex-col flex-shrink-0`}
       >
-        <div className="p-4 flex items-center justify-between">
+        <div className="p-4 flex items-center justify-between bg-[#F9F8F3]">
           {sidebarOpen ? (
-            <img src={logo} alt="Logo" className="h-8 w-auto object-contain" />
+            <img src={logo} alt="Logo" className="h-8 w-auto object-contain bg-[#F9F8F3]" />
           ) : (
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
               <FiBook />
@@ -64,7 +64,7 @@ const MainLayout = ({
           )}
         </div>
 
-        <nav className="flex-1 mt-8">
+        <nav className="flex-1 p-3 bg-[#F9F8F3]">
           <NavItem
             icon={<FiHome />}
             text=""
@@ -107,7 +107,7 @@ const MainLayout = ({
       <div className="flex-1 flex flex-col overflow-hidden w-full">
         {/* Header */}
         <header className="bg-white shadow-sm">
-          <div className="flex items-center justify-between p-4">
+          <div className="flex items-center justify-between p-4 bg-[#F9F8F3]">
             {/* Left: Page Title */}
             <h2 className="text-2xl font-bold text-gray-900 ml-[25px]">User Management</h2>
 
