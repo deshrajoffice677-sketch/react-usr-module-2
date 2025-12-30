@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   FiSearch,
   FiBell,
-  FiMessageSquare,
   FiBook,
   FiHome,
   FiBookOpen,
