@@ -84,7 +84,7 @@ export default function BanedSuspendUserDataDialog({
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-blue-500"
+              className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-gray-300"
             />
             {searchQuery && (
               <button

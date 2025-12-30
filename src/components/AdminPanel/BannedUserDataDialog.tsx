@@ -9,7 +9,7 @@ export default function BanedDataDialog({
   data,
   title,
   onReinstate,
-  loading = false
+  loading = false,
 }: {
   data: BannedUser[];
   title: string;
@@ -38,7 +38,8 @@ export default function BanedDataDialog({
 
   const filteredData = data.filter((u: BannedUser) => {
     const reasonMatch = selectReason === 'All' || u.reason === selectReason;
-    const searchMatch = searchQuery === '' ||
+    const searchMatch =
+      searchQuery === '' ||
       (u.name || u.user?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (u.reason || '').toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -68,7 +69,6 @@ export default function BanedDataDialog({
     setLoadingId(null);
   };
 
-
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mt-7">
@@ -81,7 +81,7 @@ export default function BanedDataDialog({
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-blue-500"
+              className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-gray-300"
             />
             {searchQuery && (
               <button
@@ -97,11 +97,7 @@ export default function BanedDataDialog({
             {dropDownItems.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <span className="text-sm text-gray-500">{item.Label}</span>
-                <DropDownComponent
-                  value={item.getter}
-                  setValue={item.setter}
-                  list={item.value}
-                />
+                <DropDownComponent value={item.getter} setValue={item.setter} list={item.value} />
               </div>
             ))}
           </div>
@@ -147,7 +143,7 @@ export default function BanedDataDialog({
                     </Button>
                   </td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>

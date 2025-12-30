@@ -66,7 +66,7 @@ export default function BanedSuspendUserDataDialog({
             <Input
               type="search"
               placeholder="Search"
-              className="pl-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-blue-500"
+              className="pl-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-gray-300"
             />
           </div>
 
@@ -74,11 +74,7 @@ export default function BanedSuspendUserDataDialog({
             {dropDownItems.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <span className="text-sm text-gray-500">{item.Label}</span>
-                <DropDownComponent
-                  value={item.getter}
-                  setValue={item.setter}
-                  list={item.value}
-                />
+                <DropDownComponent value={item.getter} setValue={item.setter} list={item.value} />
               </div>
             ))}
           </div>
@@ -92,8 +88,12 @@ export default function BanedSuspendUserDataDialog({
               <th className="py-4 px-4 text-left font-semibold text-gray-900 w-12">#</th>
               <th className="py-4 px-4 text-left font-semibold text-gray-900">User</th>
               <th className="py-4 px-4 text-left font-semibold text-gray-900">Reason</th>
-              <th className="py-4 px-4 text-left font-semibold text-gray-900">{showDuration ? 'Date Suspended' : 'Date Banned'}</th>
-              {showDuration && <th className="py-4 px-4 text-left font-semibold text-gray-900">Duration</th>}
+              <th className="py-4 px-4 text-left font-semibold text-gray-900">
+                {showDuration ? 'Date Suspended' : 'Date Banned'}
+              </th>
+              {showDuration && (
+                <th className="py-4 px-4 text-left font-semibold text-gray-900">Duration</th>
+              )}
               <th className="py-4 px-4 text-right font-semibold text-gray-900">Action</th>
             </tr>
           </thead>
@@ -105,7 +105,10 @@ export default function BanedSuspendUserDataDialog({
 
                 <td className="py-4 px-4">
                   <div className="flex items-center gap-3">
-                    <img src={user.avatar} className="w-8 h-8 rounded-full border border-gray-100" />
+                    <img
+                      src={user.avatar}
+                      className="w-8 h-8 rounded-full border border-gray-100"
+                    />
                     <span className="font-semibold text-gray-900">{user.name}</span>
                   </div>
                 </td>

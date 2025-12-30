@@ -26,9 +26,14 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
 
   const filteredData = data.filter((row: AuditLogEntry) => {
     const reasonMatch = selectReason === 'All' || row.reason === selectReason;
-    const searchMatch = searchQuery === '' ||
-      (row.actionBy?.name || row.moderator?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (row.user?.name || row.student?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const searchMatch =
+      searchQuery === '' ||
+      (row.actionBy?.name || row.moderator?.name || '')
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
+      (row.user?.name || row.student?.name || '')
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) ||
       row.action.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (row.reason || '').toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -64,7 +69,7 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
                 placeholder="Search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-blue-500"
+                className="pl-10 pr-10 h-10 rounded-lg border-gray-200 text-sm w-full focus-visible:ring-gray-300"
               />
               {searchQuery && (
                 <button
@@ -80,11 +85,7 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
               {dropDownItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <span className="text-sm text-gray-500">{item.Label}</span>
-                  <DropDownComponent
-                    value={item.getter}
-                    setValue={item.setter}
-                    list={item.value}
-                  />
+                  <DropDownComponent value={item.getter} setValue={item.setter} list={item.value} />
                 </div>
               ))}
             </div>
@@ -114,7 +115,9 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
                         src={row.actionBy?.avatar || row.moderator?.avatar}
                         className="w-8 h-8 rounded-full border border-gray-100"
                       />
-                      <span className="font-medium text-gray-900">{row.actionBy?.name || row.moderator?.name}</span>
+                      <span className="font-medium text-gray-900">
+                        {row.actionBy?.name || row.moderator?.name}
+                      </span>
                     </div>
                   </td>
 
@@ -126,7 +129,9 @@ export default function AuditLogTable({ title, data }: { title: string; data: Au
                         src={row.user?.avatar || row.student?.avatar}
                         className="w-8 h-8 rounded-full border border-gray-100"
                       />
-                      <span className="font-medium text-gray-900">{row.user?.name || row.student?.name}</span>
+                      <span className="font-medium text-gray-900">
+                        {row.user?.name || row.student?.name}
+                      </span>
                     </div>
                   </td>
 

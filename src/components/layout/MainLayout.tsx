@@ -50,10 +50,10 @@ const MainLayout = ({
   const isStartsWith = (path: string) => location.pathname.startsWith(path);
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-gray-50">
+    <div className="flex h-screen w-screen overflow-hidden bg-gray-100">
       {/* Sidebar */}
       <div
-        className={`${sidebarOpen ? 'w-54' : 'w-20'} bg-white shadow-lg transition-all duration-300 flex flex-col flex-shrink-0`}
+        className={`${sidebarOpen ? 'w-25' : 'w-20'} bg-white shadow-lg transition-all duration-300 flex flex-col flex-shrink-0`}
       >
         <div className="p-4 flex items-center justify-between">
           {sidebarOpen ? (
@@ -68,35 +68,35 @@ const MainLayout = ({
         <nav className="flex-1 mt-8">
           <NavItem
             icon={<FiHome />}
-            text="Home"
+            text=""
             isActive={isActive('/')}
             sidebarOpen={sidebarOpen}
             onClick={() => navigate('/')}
           />
           <NavItem
             icon={<FiBookOpen />}
-            text="Courses"
+            text=""
             isActive={isStartsWith('/courses') || isStartsWith('/course/')}
             sidebarOpen={sidebarOpen}
             onClick={() => navigate('/courses')}
           />
           <NavItem
             icon={<FiAward />}
-            text="Achievements"
+            text=""
             isActive={isActive('/achievements')}
             sidebarOpen={sidebarOpen}
             onClick={() => navigate('/achievements')}
           />
           <NavItem
             icon={<FiSettings />}
-            text="Settings"
+            text=""
             isActive={isActive('/settings')}
             sidebarOpen={sidebarOpen}
             onClick={() => navigate('/settings')}
           />
           <NavItem
             icon={<FiUser />}
-            text="Users"
+            text=""
             isActive={isStartsWith('/user-management')}
             sidebarOpen={sidebarOpen}
             onClick={() => navigate('/user-management/users')}
@@ -107,26 +107,29 @@ const MainLayout = ({
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden w-full">
         {/* Header */}
-        <header className="bg-white shadow-sm z-10">
+        <header className="bg-white shadow-sm">
           <div className="flex items-center justify-between p-4">
-            {showSearch && (
-              <div className="relative w-full max-w-xl">
-                <input
-                  type="text"
-                  placeholder={searchPlaceholder}
-                  className="w-full pl-10 pr-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <FiSearch className="absolute left-5 top-3 text-black" />
-              </div>
-            )}
+            {/* Left: Page Title */}
+            <h2 className="text-2xl font-bold text-gray-900 ml-[25px]">User Management</h2>
+
+            {/* Right: Search + Actions */}
             <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
-                <FiMessageSquare size={20} />
-              </button>
-              <button className="p-2 text-black hover:text-gray-900 hover:bg-gray-100 rounded-full relative">
+              {showSearch && (
+                <div className="relative  min-w-[500px]">
+                  <input
+                    type="text"
+                    placeholder={searchPlaceholder}
+                    className="w-full pl-10 pr-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                  />
+                  <FiSearch className="absolute left-3 top-3 text-black" />
+                </div>
+              )}
+
+              <button className="p-2 text-black hover:bg-gray-100 rounded-full relative">
                 <FiBell size={20} />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
+
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium">
                   U
