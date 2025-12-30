@@ -21,7 +21,6 @@ type NavItemProps = {
   onClick?: () => void;
 };
 
-
 interface MainLayoutProps {
   children: React.ReactNode;
   showSearch?: boolean;
@@ -139,9 +138,7 @@ const MainLayout = ({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-50 w-full">
-          {children || <Outlet />}
-        </main>
+        <main className="flex-1 overflow-y-auto p-6 w-full bg-white">{children || <Outlet />}</main>
       </div>
     </div>
   );
