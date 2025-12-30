@@ -98,7 +98,7 @@ const UserDetailPage = () => {
           >
             <ArrowLeft className="h-6 w-6 text-gray-900" />
           </button>
-          <h1 className="text-xl font-semibold text-gray-900">User Profile</h1>
+          <h1 className="text-2xl font-bold text-gray-900">User Profile</h1>
         </div>
 
         <div className="bg-[#E9F0FF] p-5 rounded-xl flex justify-between items-center shadow-sm">
