@@ -10,7 +10,7 @@ export default function BanedSuspendUserDataDialog({
   data,
   onActionClick,
   actionLabel,
-  loading = false
+  loading = false,
 }: {
   title: string;
   data: SuspendedUser[];
@@ -41,7 +41,8 @@ export default function BanedSuspendUserDataDialog({
 
   const filteredData = data.filter((u: SuspendedUser) => {
     const reasonMatch = selectReason === 'All' || u.reason === selectReason;
-    const searchMatch = searchQuery === '' ||
+    const searchMatch =
+      searchQuery === '' ||
       (u.name || u.user?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (u.reason || '').toLowerCase().includes(searchQuery.toLowerCase());
 
@@ -73,7 +74,7 @@ export default function BanedSuspendUserDataDialog({
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mt-7">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 ">
         <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
 
         <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
@@ -99,11 +100,7 @@ export default function BanedSuspendUserDataDialog({
             {dropDownItems.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <span className="text-sm text-gray-500">{item.Label}</span>
-                <DropDownComponent
-                  value={item.getter}
-                  setValue={item.setter}
-                  list={item.value}
-                />
+                <DropDownComponent value={item.getter} setValue={item.setter} list={item.value} />
               </div>
             ))}
           </div>
@@ -133,7 +130,11 @@ export default function BanedSuspendUserDataDialog({
                   <td className="py-4 px-4 text-gray-500">{index + 1}</td>
 
                   <td className="py-4 px-4 flex items-center gap-3">
-                    <img src={u.avatar || u.user?.avatar} className="w-8 h-8 rounded-full border border-gray-100" alt="" />
+                    <img
+                      src={u.avatar || u.user?.avatar}
+                      className="w-8 h-8 rounded-full border border-gray-100"
+                      alt=""
+                    />
                     <span className="font-semibold text-gray-900">{u.name || u.user?.name}</span>
                   </td>
 
@@ -151,11 +152,15 @@ export default function BanedSuspendUserDataDialog({
                       disabled={loading}
                       className="rounded-lg shadow-none"
                     >
-                      {isRowLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : (actionLabel || 'Lift Suspension')}
+                      {isRowLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        actionLabel || 'Lift Suspension'
+                      )}
                     </Button>
                   </td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>

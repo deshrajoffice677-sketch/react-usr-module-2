@@ -56,12 +56,12 @@ const UsersPage = () => {
     const roleMatch = selectRole === 'All' || u.role === selectRole;
     const statusMatch = selectStatus === 'All' || u.status === selectStatus;
     const subMatch = selectSubscription === 'All' || u.subscription === selectSubscription;
-    const searchMatch = searchQuery === '' ||
+    const searchMatch =
+      searchQuery === '' ||
       (u.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (u.email || '').toLowerCase().includes(searchQuery.toLowerCase());
     return roleMatch && statusMatch && subMatch && searchMatch;
   });
-
 
   const [file, setFile] = useState<File | null>(null);
 
@@ -220,7 +220,9 @@ const UsersPage = () => {
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Email</th>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Role</th>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Status</th>
-                    <th className="py-4 px-4 text-left font-semibold text-gray-900">Subscription</th>
+                    <th className="py-4 px-4 text-left font-semibold text-gray-900">
+                      Subscription
+                    </th>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Joined Date</th>
                     <th className="py-4 px-4 text-left font-semibold text-gray-900">Last Active</th>
                     <th className="py-4 px-4 text-right font-semibold text-gray-900">Action</th>
@@ -237,7 +239,8 @@ const UsersPage = () => {
                       </td>
                     </tr>
                   )}
-                  {selectUserList && !isLoading &&
+                  {selectUserList &&
+                    !isLoading &&
                     selectUserList.map((u: User, index: number) => (
                       <tr
                         key={u.id}
@@ -354,10 +357,10 @@ const UsersPage = () => {
               </table>
             </div>
           </TabsContent>
-          <TabsContent value="invitations" className=" w-full flex justify-start">
+          <TabsContent value="invitations" className=" w-full flex justify-start p-6">
             <div className="w-full max-w-3xl space-y-8">
               <div className="flex justify-between items-start">
-                <h2 className="text-2xl font-semibold">Invitations</h2>
+                <h2 className="text-2xl font-bold text-gray-900">Invitations</h2>
                 <button className="text-sm underline text-gray-600 hover:text-gray-800">
                   <PendingInvitesDialog />
                 </button>
