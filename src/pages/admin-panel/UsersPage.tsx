@@ -159,7 +159,7 @@ const UsersPage = () => {
           </TabsList>
           <TabsContent
             value="user-directory"
-            className="mt-4 rounded-2xl bg-white p-6 text-sm text-gray-600"
+            className="mt-4 rounded-2xl bg-white  text-sm text-gray-600"
           >
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
               <h2 className="text-2xl font-bold text-gray-900">User Directory</h2>
@@ -361,7 +361,7 @@ const UsersPage = () => {
               </table>
             </div>
           </TabsContent>
-          <TabsContent value="invitations" className=" w-full flex justify-start p-6">
+          <TabsContent value="invitations" className=" w-full flex justify-start ">
             <div className="w-full max-w-3xl space-y-8">
               <div className="flex justify-between items-start">
                 <h2 className="text-2xl font-bold text-gray-900">Invitations</h2>
@@ -434,7 +434,7 @@ const UsersPage = () => {
               </Button>
             </div>
           </TabsContent>
-          <TabsContent value="suspensions" className="p-6">
+          <TabsContent value="suspensions" className="">
             <BanedSuspendUserDataDialog
               title="Suspended Users"
               data={suspendedUser}
@@ -452,7 +452,7 @@ const UsersPage = () => {
             />
           </TabsContent>
 
-          <TabsContent value="audit-log" className="p-6">
+          <TabsContent value="audit-log" className="">
             <AuditLogTable title="Audit Log" data={auditLogData} />
           </TabsContent>
         </Tabs>
