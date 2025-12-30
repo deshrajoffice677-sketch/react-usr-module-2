@@ -274,13 +274,13 @@ const UsersPage = () => {
                                     ? 'destructive'
                                     : 'secondary'
                             }
-                            className="font-medium"
+                            className="font-medium w-24 justify-center"
                           >
                             {u.status}
                           </Badge>
                         </td>
 
-                        <td className="py-4 px-4">{u.subscription}</td>
+                        <td className="py-4 px-4 font-medium text-gray-900">{u.subscription}</td>
                         <td className="py-4 px-4 text-gray-500">{formatDate(u.joinedDate)}</td>
                         <td className="py-4 px-4 text-gray-500">{timeAgo(u.lastActive)}</td>
 
