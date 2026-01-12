@@ -8,9 +8,13 @@ import UsersPage from '@/pages/admin-panel/UsersPage';
 
 export const routes = [
   {
-    element: <MainLayout><Outlet /></MainLayout>,
+    element: (
+      <MainLayout>
+        <Outlet />
+      </MainLayout>
+    ),
     children: [
-      { path: '/', element: <Navigate to="/courses" replace /> },
+      { path: '/', element: <Navigate to="/user-management/users" replace /> },
       { path: 'courses', element: <Courses /> },
       { path: 'course/:id', element: <CourseDetail /> },
       { path: 'my-learning', element: <MyLearning /> },
